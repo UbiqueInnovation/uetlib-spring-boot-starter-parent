@@ -123,6 +123,46 @@
                 </configuration>
                 <!-- @formatter:on -->
             </plugin>
+
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <java>
+                        <googleJavaFormat>
+                            <style>AOSP</style>
+                            <reorderImports>true</reorderImports>
+                        </googleJavaFormat>
+                    </java>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>spotless-check</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Used to read maven artifact versions, i.e. the version of the backend lib used -->
+            <plugin>
+                <groupId>de.westemeyer</groupId>
+                <artifactId>artifact-version-maven-plugin</artifactId>
+                <version>2.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate-service</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <serviceType>NATIVE</serviceType>
+                </configuration>
+            </plugin>
         </plugins>
 
         <pluginManagement>
