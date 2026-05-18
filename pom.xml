@@ -43,7 +43,7 @@
             <dependency>
                 <groupId>ch.ubique</groupId>
                 <artifactId>uetlib-self-bom</artifactId>
-                <version>3.3.3</version>
+                <version>4.0.1</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
