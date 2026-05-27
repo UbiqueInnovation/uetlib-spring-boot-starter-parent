@@ -49,6 +49,6 @@ jobs:
         uses: UbiqueInnovation/action-systems-github-release@5db68dd4a817a585f4a0a9aa7a2cbb8b32cc4433 # v1.0.1
         with:
           ref_name: ${{ github.ref_name }}
-          release_option_prerelease: true
+          release_option_prerelease: false
           changelog_file: CHANGELOG.md
           repo_token: ${{ secrets.GITHUB_TOKEN }}
