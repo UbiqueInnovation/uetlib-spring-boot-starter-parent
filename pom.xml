@@ -24,6 +24,9 @@
         <!-- one of DEFAULT, OFF, WARN, ERROR-->
         <explicit-null-marking-level>DEFAULT</explicit-null-marking-level>
 
+        <!-- westemeyer version config -->
+        <westemeyer-version-package-name>${project.groupId}.version</westemeyer-version-package-name>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -48,7 +51,7 @@
             <dependency>
                 <groupId>ch.ubique</groupId>
                 <artifactId>uetlib-self-bom</artifactId>
-                <version>4.0.1</version>
+                <version>4.0.2</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -74,6 +77,8 @@
     </repositories>
 
     <build>
+        <!-- finalName to fix the name of the resulting jar -->
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -163,6 +168,7 @@
                 </executions>
                 <configuration>
                     <serviceType>NATIVE</serviceType>
+                    <packageName>${westemeyer-version-package-name}</packageName>
                 </configuration>
             </plugin>
         </plugins>
