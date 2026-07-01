@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 4.1.0-2026.07.1
+
+- Updated `uetlib-bom` to
+  `2026.06.0`: [Changelog](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026060)
+- Updated `uetlib-self-bom` tp
+  `4.1.3`: [Changelog](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#413)
+- Updated `spotless-maven-plugin` to `3.8.0`
+
 ## 4.1.0-2026.07.0
 
 Set `explicit-null-marking-level` to `ERROR` by default. Projects can (but shouldn't) opt-out of this by setting the
