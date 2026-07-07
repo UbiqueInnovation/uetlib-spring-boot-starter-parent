@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 4.1.0-2026.07.5
+
+- Updated `uetlib-self-bom` to
+  `4.4.0`: [Changelog](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#440)
+
 ## 4.1.0-2026.07.4
 
 - Updated `uetlib-self-bom` to
