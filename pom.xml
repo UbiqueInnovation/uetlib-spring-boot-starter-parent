@@ -33,18 +33,21 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2025.1.2</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+
+            <!--
+                Imported BOM precedence:
+                Maven uses the first managed version it encounters for overlapping entries
+                from imported BOMs. Therefore, keep the BOMs whose versions should be
+                authoritative first, and broader/foundation BOMs later.
+
+                Explicit dependencyManagement entries below this imported-BOM block are
+                intentional hard pins for individual artifacts.
+            -->
 
             <dependency>
                 <groupId>ch.ubique</groupId>
                 <artifactId>uetlib-bom</artifactId>
-                <version>2026.06.0</version>
+                <version>2026.07.0</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -54,6 +57,14 @@
                 <version>4.4.0</version>
                 <scope>import</scope>
                 <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2025.1.2</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

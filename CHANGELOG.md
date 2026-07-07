@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 4.1.0-2026.07.6
+
+- Updated `uetlib-bom` to
+  `2026.07.0`: [Changelog](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026070)
+- Fix import bom order (first import boms take precedence)
+
 ## 4.1.0-2026.07.5
 
 - Updated `uetlib-self-bom` to
