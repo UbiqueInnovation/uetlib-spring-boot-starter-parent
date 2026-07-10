@@ -1,38 +1,45 @@
 # CHANGELOG
 
+## 4.1.0-2026.07.7
+
+- `uetlib-bom` updated to
+  `2026.07.1`: [Changelog](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026071) [Diff/2026.07.0-2026.07.1](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.07.0...v2026.07.1)
+- `uetlib-self-bom` updated to
+  `4.5.0`: [Changelog/4.5.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#450) [Diff/4.4.0-4.5.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v4.4.0...v4.5.0)
+
 ## 4.1.0-2026.07.6
 
-- Updated `uetlib-bom` to
+- `uetlib-bom` updated to
   `2026.07.0`: [Changelog](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026070)
 - Fix import bom order (first import boms take precedence)
 
 ## 4.1.0-2026.07.5
 
-- Updated `uetlib-self-bom` to
+- `uetlib-self-bom` updated to
   `4.4.0`: [Changelog](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#440)
 
 ## 4.1.0-2026.07.4
 
-- Updated `uetlib-self-bom` to
+- `uetlib-self-bom` updated to
   `4.3.0`: [Changelog](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#430)
 
 ## 4.1.0-2026.07.3
 
-- Updated `uetlib-self-bom` to
+- `uetlib-self-bom` updated to
   `4.2.1`: [Changelog](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#421)
 
 ## 4.1.0-2026.07.2
 
-- Updated `uetlib-self-bom` to
+- `uetlib-self-bom` updated to
   `4.2.0`: [Changelog](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#420)
 
 ## 4.1.0-2026.07.1
 
-- Updated `uetlib-bom` to
+- `uetlib-bom` updated to
   `2026.06.0`: [Changelog](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026060)
 - Updated `uetlib-self-bom` tp
   `4.1.3`: [Changelog](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#413)
-- Updated `spotless-maven-plugin` to `3.8.0`
+- `spotless-maven-plugin` updated to `3.8.0`
 
 ## 4.1.0-2026.07.0
 
