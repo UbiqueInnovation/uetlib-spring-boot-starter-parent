@@ -23,6 +23,7 @@
 
         <!-- one of DEFAULT, OFF, WARN, ERROR-->
         <explicit-null-marking-level>ERROR</explicit-null-marking-level>
+        <error-prone-excluded-paths>.*/src/test/java/.*</error-prone-excluded-paths>
 
         <!-- westemeyer version config -->
         <westemeyer-version-package-name>${project.groupId}.version</westemeyer-version-package-name>
@@ -99,96 +100,76 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <!-- @formatter:off -->
-                <configuration>
-                    <fork>true</fork>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                        <arg>--should-stop=ifError=FLOW</arg>
-                        <arg>-XDcompilePolicy=simple</arg>
-                        <arg>-Xplugin:ErrorProne \
-                            -XepDisableAllChecks \
-                            -Xep:NullAway:ERROR \
-                            -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} \
-                            -XepDisableWarningsInGeneratedCode \
-                            -XepExcludedPaths:.*/src/test/java/.* \
-                            -XepOpt:NullAway:TreatGeneratedAsUnannotated=true \
-                            -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated \
-                            -XepOpt:NullAway:JSpecifyMode=true \
-                            -XepOpt:NullAway:OnlyNullMarked
-                        </arg>
-
-                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
-                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
-                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
-                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
-                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
-                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
-                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
-                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
-                        <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
-                        <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
-                    </compilerArgs>
-                    <annotationProcessorPathsUseDepMgmt>true
-                    </annotationProcessorPathsUseDepMgmt>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>com.google.errorprone</groupId>
-                            <artifactId>error_prone_core</artifactId>
-                        </path>
-                        <path>
-                            <groupId>com.uber.nullaway</groupId>
-                            <artifactId>nullaway</artifactId>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-                <!-- @formatter:on -->
             </plugin>
 
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <java>
-                        <googleJavaFormat>
-                            <style>AOSP</style>
-                            <reorderImports>true</reorderImports>
-                        </googleJavaFormat>
-                    </java>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>spotless-check</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
-            <!-- Used to read maven artifact versions, i.e. the version of the backend lib used -->
             <plugin>
                 <groupId>de.westemeyer</groupId>
                 <artifactId>artifact-version-maven-plugin</artifactId>
-                <version>2.0.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate-service</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <serviceType>NATIVE</serviceType>
-                    <packageName>${westemeyer-version-package-name}</packageName>
-                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
             </plugin>
         </plugins>
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <!-- @formatter:off -->
+                    <configuration>
+                        <fork>true</fork>
+                        <parameters>true</parameters>
+                        <annotationProcessorPathsUseDepMgmt>
+                            true
+                        </annotationProcessorPathsUseDepMgmt>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>com.google.errorprone</groupId>
+                                <artifactId>error_prone_core</artifactId>
+                            </path>
+                            <path>
+                                <groupId>com.uber.nullaway</groupId>
+                                <artifactId>nullaway</artifactId>
+                            </path>
+                        </annotationProcessorPaths>
+                        <compilerArgs>
+                            <arg>--should-stop=ifError=FLOW</arg>
+                            <arg>-XDcompilePolicy=simple</arg>
+                            <arg>-Xplugin:ErrorProne \
+                                -XepDisableAllChecks \
+                                -Xep:NullAway:ERROR \
+                                -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} \
+                                -XepDisableWarningsInGeneratedCode \
+                                -XepExcludedPaths:${error-prone-excluded-paths} \
+                                -XepOpt:NullAway:TreatGeneratedAsUnannotated=true \
+                                -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated \
+                                -XepOpt:NullAway:JSpecifyMode=true \
+                                -XepOpt:NullAway:OnlyNullMarked
+                            </arg>
+
+                            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+                            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+                            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+                            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                        </compilerArgs>
+                    </configuration>
+                    <!-- @formatter:on -->
+                </plugin>
+
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -227,6 +208,46 @@
                     </configuration>
                 </plugin>
 
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <java>
+                        <googleJavaFormat>
+                            <style>AOSP</style>
+                            <reorderImports>true</reorderImports>
+                        </googleJavaFormat>
+                    </java>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>spotless-check</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+                <plugin>
+                    <groupId>de.westemeyer</groupId>
+                    <artifactId>artifact-version-maven-plugin</artifactId>
+                    <version>2.0.1</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generate-service</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <serviceType>NATIVE</serviceType>
+                        <packageName>${westemeyer-version-package-name}</packageName>
+                    </configuration>
+                </plugin>
+
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
@@ -234,6 +255,7 @@
                     <executions>
                         <execution>
                             <id>prepare-agent</id>
+                            <phase>initialize</phase>
                             <goals>
                                 <goal>prepare-agent</goal>
                             </goals>
