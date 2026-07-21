@@ -4,10 +4,24 @@
 
 - Add `unidata-all` repository
 - Add default project sonar properties
-- Add more plugins not just as plugin management:
+- Add more plugins not just as plugin management (default usages of these do not need to be specified in the plugin or
+  management section):
     - `com.diffplug.spotless:spotless-maven-plugin`
     - `de.westemeyer:artifact-version-maven-plugin`
     - `org.jacoco:jacoco-maven-plugin`
+- Added to plugin management (see usage in the project below):
+    - `org.apache.maven.plugins:maven-source-plugin`
+    - `org.apache.maven.plugins:maven-javadoc-plugin`
+  ```xml
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+  </plugin>
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-javadoc-plugin</artifactId>
+  </plugin>
+  ```
 
 ## 4.1.0-2026.07.7
 
