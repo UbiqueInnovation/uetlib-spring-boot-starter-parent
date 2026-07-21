@@ -6,7 +6,9 @@
 - Add default project sonar properties
 - Add more plugins not just as plugin management (default usages of these do not need to be specified in the plugin or
   management section):
-    - `com.diffplug.spotless:spotless-maven-plugin`
+    - `com.diffplug.spotless:spotless-maven-plugin`: **USE IN TANDEM WITH
+      `uses: UbiqueInnovation/action-systems-mvn-install@v1.2.0` to have spotless fail on formatting errors in CI but
+      auto-apply locally.**
     - `de.westemeyer:artifact-version-maven-plugin`
     - `org.jacoco:jacoco-maven-plugin`
 - Added to plugin management (see usage in the project below):

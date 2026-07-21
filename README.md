@@ -7,9 +7,9 @@ for uetlib-using projects.
 
 In the given order:
 
-- `org.springframework.cloud:spring-cloud-dependencies`
 - `ch.ubique:uetlib-bom`
 - `ch.ubique:uetlib-self-bom`
+- `org.springframework.cloud:spring-cloud-dependencies`
 
 ## Plugin Management
 
@@ -24,7 +24,7 @@ In the given order:
   <parent>
     <groupId>ch.ubique</groupId>
     <artifactId>uetlib-spring-boot-starter-parent</artifactId>
-    <version>4.0.5.2</version>
+    <version>4.0.5-2026.05.0</version>
   </parent>
   ```
 - No `spring-cloud-dependencies`/`uetlib-bom`/`uetlib-self-bom` dependency management is necessary
@@ -51,7 +51,6 @@ In the given order:
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${jacoco.version}</version>
         <executions>
           <execution>
             <id>report-aggregate</id>
@@ -72,19 +71,16 @@ This project does not adhere to semantic versioning, as the SemVer space is occu
 this parent follows. We use:
 
 ```
-<springBootMajor>.<springBootMinor>.<springBootPath>-<YYYY>.<MM>.<DD>
+<springBootMajor>.<springBootMinor>.<springBootPath>-<YYYY>.<MM>.<versionOfTheMonth>
 ```
-
-The `uetlibParentVersion` is incremented for every release, but only when this uetlib Spring Boot Starter Parent itself
-changes.
 
 Hence, starting from `4.0.6-2026.05.0` the next version can be one of three scenarios:
 
-| Next Version                                          | Cause                                                                             |
-|-------------------------------------------------------|-----------------------------------------------------------------------------------|
-| `5.0.0-2026.05.0`/`4.1.0-2026.05.0`/`4.0.7-2026.05.0` | The Spring Boot version is updated, but the uetlib parent is otherwise unchanged. |
-| `4.0.6.-2026.06.0` / `4.0.6.-2026.05.1`               | The Spring Boot version is unchanged, but the uetlib parent is updated.           |
-| `5.0.0-2026.06.0`/`4.1.0-2026.06.0`/`4.0.7-2026.06.0` | Both the Spring Boot version and the uetlib parent are updated.                   |
+| Next Version                                              | Cause                                                                             |
+|-----------------------------------------------------------|-----------------------------------------------------------------------------------|
+| `5.0.0-2026.05.0` / `4.1.0-2026.05.0` / `4.0.7-2026.05.0` | The Spring Boot version is updated, but the uetlib parent is otherwise unchanged. |
+| `4.0.6-2027.01.0` / `4.0.6-2026.06.0` / `4.0.6-2026.05.1` | The Spring Boot version is unchanged, but the uetlib parent is updated.           |
+| `5.0.0-2026.06.0` / `4.1.0-2026.06.0` / `4.0.7-2026.06.0` | Both the Spring Boot version and the uetlib parent are updated.                   |
 
 ## Changelog
 
