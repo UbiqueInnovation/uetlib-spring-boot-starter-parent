@@ -212,7 +212,6 @@
                     <groupId>com.diffplug.spotless</groupId>
                     <artifactId>spotless-maven-plugin</artifactId>
                     <version>3.8.0</version>
-
                     <configuration>
                         <java>
                             <googleJavaFormat>
@@ -221,7 +220,6 @@
                             </googleJavaFormat>
                         </java>
                     </configuration>
-
                     <executions>
                         <!-- Automatically format during normal local Maven builds. -->
                         <execution>
@@ -231,7 +229,6 @@
                                 <goal>apply</goal>
                             </goals>
                         </execution>
-
                         <!-- Verify formatting as part of the normal Maven lifecycle. -->
                         <execution>
                             <id>spotless-check</id>
@@ -242,6 +239,7 @@
                         </execution>
                     </executions>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
