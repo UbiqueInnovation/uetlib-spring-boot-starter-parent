@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 4.1.0-2026.07.8
+
+- Add `unidata-all` repository
+- Add default project sonar properties
+- Add more plugins not just as plugin management:
+    - `com.diffplug.spotless:spotless-maven-plugin`
+    - `de.westemeyer:artifact-version-maven-plugin`
+    - `org.jacoco:jacoco-maven-plugin`
+
 ## 4.1.0-2026.07.7
 
 - `uetlib-bom` updated to
