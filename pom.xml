@@ -21,6 +21,9 @@
         <java.version>25</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
 
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <!-- one of DEFAULT, OFF, WARN, ERROR-->
         <explicit-null-marking-level>ERROR</explicit-null-marking-level>
         <error-prone-excluded-paths>.*/src/test/java/.*</error-prone-excluded-paths>
@@ -28,8 +31,15 @@
         <!-- westemeyer version config -->
         <westemeyer-version-package-name>${project.groupId}.version</westemeyer-version-package-name>
 
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Sonar & Jacoco coverage reports -->
+        <sonar.coverage.module>${project.artifactId}</sonar.coverage.module>
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ${project.basedir}/../${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.projectName>${project.artifactId}</sonar.projectName>
+        <sonar.projectKey>UbiqueInnovation_${sonar.projectName}</sonar.projectKey>
+        <sonar.organization>ubiqueinnovation</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencyManagement>
