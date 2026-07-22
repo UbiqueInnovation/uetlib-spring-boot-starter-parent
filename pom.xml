@@ -44,30 +44,30 @@
 
     <dependencyManagement>
         <dependencies>
-
             <!--
-                Imported BOM precedence:
-                Maven uses the first managed version it encounters for overlapping entries
-                from imported BOMs. Therefore, keep the BOMs whose versions should be
-                authoritative first, and broader/foundation BOMs later.
+                    Imported BOM precedence:
+                    Maven uses the first managed version it encounters for overlapping entries
+                    from imported BOMs. Therefore, keep the BOMs whose versions should be
+                    authoritative first, and broader/foundation BOMs later.
 
-                Explicit dependencyManagement entries below this imported-BOM block are
-                intentional hard pins for individual artifacts.
+                    Explicit dependencyManagement entries below this imported-BOM block are
+                    intentional hard pins for individual artifacts.
             -->
 
             <dependency>
                 <groupId>ch.ubique</groupId>
                 <artifactId>uetlib-bom</artifactId>
                 <version>2026.07.1</version>
-                <scope>import</scope>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
+
             <dependency>
                 <groupId>ch.ubique</groupId>
                 <artifactId>uetlib-self-bom</artifactId>
                 <version>4.5.0</version>
-                <scope>import</scope>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
