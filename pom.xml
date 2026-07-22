@@ -199,13 +199,13 @@
                     <artifactId>jib-maven-plugin</artifactId>
                     <version>3.5.1</version>
 
-                    <dependencies>
+    <dependencies>
                         <dependency>
                             <groupId>com.google.cloud.tools</groupId>
                             <artifactId>jib-spring-boot-extension-maven</artifactId>
                             <version>0.1.0</version>
                         </dependency>
-                    </dependencies>
+    </dependencies>
 
                     <configuration>
                         <pluginExtensions>
