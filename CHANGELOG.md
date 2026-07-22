@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.0-2026.07.9
+
+- Add back sonar properties
+
 ## 4.1.0-2026.07.8
 
 - Add `unidata-all` repository
