@@ -32,9 +32,10 @@
         <westemeyer-version-package-name>${project.groupId}.version</westemeyer-version-package-name>
 
         <!-- Sonar & Jacoco coverage reports -->
+        <!-- Set sonar.coverage.module to just '.' for single module projects (where it itself is the coverage module -->
         <sonar.coverage.module>${project.artifactId}</sonar.coverage.module>
         <sonar.coverage.jacoco.xmlReportPaths>
-            ${project.basedir}/../${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml
+            ${project.basedir}/${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectName>${project.artifactId}</sonar.projectName>
         <sonar.projectKey>UbiqueInnovation_${sonar.projectName}</sonar.projectKey>
@@ -71,11 +72,9 @@
             </dependency>
 
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2025.1.2</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>ch.ubique</groupId>
+                <artifactId>uetlib-spring-cloud</artifactId>
+                <version>2.3.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
