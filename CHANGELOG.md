@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 4.1.0-2026.07.10
+
+- Fix `sonar.coverage.jacoco.xmlReportPaths`. Make sure `sonar.coverage.module` is set to the correct value.
+    - For a mutli module project it should be the name of the coverage module, e.g. `post-coverage`.
+    - For a single module project it should be `.` (The local directory, as it is resolved relative to the project base
+      dir).
+
 ## 4.1.0-2026.07.9
 
 - Add back sonar properties
