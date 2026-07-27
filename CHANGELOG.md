@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 4.1.0-2026.7.11
+
+- Back to SemVer-compatible CalVer. No 0-padded months
+- `uetlib-bom` updated to
+  `2026.7.3`: [Changelog/2026.7.3](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#241) [Diff/2026.07.1-2026.7.3](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.07.1...v2026.7.3)
+- `uetlib-self-bom` updated to
+  `4.5.2`: [Changelog/4.5.2](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#452) [Diff/4.5.0-4.5.2](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v4.5.0...v4.5.2)
+
 ## 4.1.0-2026.07.10
 
 - Fix `sonar.coverage.jacoco.xmlReportPaths`. Make sure `sonar.coverage.module` is set to the correct value.
