@@ -2,6 +2,7 @@
 
 ## 4.1.0-2026.7.12
 
+- Configure `spotless` with `ktfmt` for Kotlin
 - `uetlib-bom` updated to
   `2026.7.4`: [Changelog/2026.7.4](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202674) [Diff/2026.7.3-2026.7.4](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.7.3...v2026.7.4)
 - `uetlib-self-bom` updated to
