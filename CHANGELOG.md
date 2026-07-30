@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 4.1.0-2026.7.12
+
+- `uetlib-bom` updated to
+  `2026.7.4`: [Changelog/2026.7.4](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202674) [Diff/2026.7.3-2026.7.4](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.7.3...v2026.7.4)
+- `uetlib-self-bom` updated to
+  `5.0.2`: [Changelog/5.0.2](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#502) [Diff/4.5.2-5.0.2](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v4.5.2...v5.0.2)
+
 ## 4.1.0-2026.7.11
 
 - Back to SemVer-compatible CalVer. No 0-padded months
