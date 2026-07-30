@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.0-2026.7.13
+
+- updated actions to not run tests twice for sonar
+
 ## 4.1.0-2026.7.12
 
 - Configure `spotless` with `ktfmt` for Kotlin
