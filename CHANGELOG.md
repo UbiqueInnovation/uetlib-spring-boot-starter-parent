@@ -5,6 +5,8 @@
 - updated actions to not run tests twice for sonar
 - `uetlib-bom` updated to
   `2026.7.5`: [Changelog/2026.7.5](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202675) [Diff/2026.7.4-2026.7.5](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.7.4...v2026.7.5)
+- `uetlib-self-bom` updated to
+  `5.0.3`: [Changelog/5.0.3](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#503) [Diff/5.0.2-5.0.3](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.0.2...v5.0.3)
 
 ## 4.1.0-2026.7.12
 
