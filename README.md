@@ -24,7 +24,7 @@ In the given order:
   <parent>
     <groupId>ch.ubique</groupId>
     <artifactId>uetlib-spring-boot-starter-parent</artifactId>
-    <version>4.0.5-2026.05.0</version>
+    <version>4.0.5-2027.7.4</version>
   </parent>
   ```
 - No `spring-cloud-dependencies`/`uetlib-bom`/`uetlib-self-bom` dependency management is necessary
@@ -74,13 +74,13 @@ this parent follows. We use:
 <springBootMajor>.<springBootMinor>.<springBootPath>-<YYYY>.<MM>.<versionOfTheMonth>
 ```
 
-Hence, starting from `4.0.6-2026.05.0` the next version can be one of three scenarios:
+Hence, starting from `4.1.0-2027.7.4` the next version can be one of three scenarios:
 
-| Next Version                                              | Cause                                                                             |
-|-----------------------------------------------------------|-----------------------------------------------------------------------------------|
-| `5.0.0-2026.05.0` / `4.1.0-2026.05.0` / `4.0.7-2026.05.0` | The Spring Boot version is updated, but the uetlib parent is otherwise unchanged. |
-| `4.0.6-2027.01.0` / `4.0.6-2026.06.0` / `4.0.6-2026.05.1` | The Spring Boot version is unchanged, but the uetlib parent is updated.           |
-| `5.0.0-2026.06.0` / `4.1.0-2026.06.0` / `4.0.7-2026.06.0` | Both the Spring Boot version and the uetlib parent are updated.                   |
+| Next Version                                           | Cause                                                                             |
+|--------------------------------------------------------|-----------------------------------------------------------------------------------|
+| `5.0.0-2027.7.4` / `4.2.0-2027.7.4` / `4.1.1-2027.7.4` | The Spring Boot version is updated, but the uetlib parent is otherwise unchanged. |
+| `4.1.0-2027.1.0` / `4.1.0-2027.8.0` / `4.1.0-2027.7.5` | The Spring Boot version is unchanged, but the uetlib parent is updated.           |
+| `5.0.0-2027.8.0` / `4.2.0-2027.8.0` / `4.1.1-2027.8.0` | Both the Spring Boot version and the uetlib parent are updated.                   |
 
 ## Changelog
 
