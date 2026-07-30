@@ -308,4 +308,8 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <scm child.scm.url.inherit.append.path="false">
+        <url>https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent</url>
+    </scm>
 </project>
