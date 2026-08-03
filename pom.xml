@@ -226,6 +226,17 @@
                                 <reorderImports>true</reorderImports>
                             </googleJavaFormat>
                         </java>
+                        <kotlin>
+                            <ktfmt>
+                                <style>KOTLINLANG</style>
+                            </ktfmt>
+                            <includes>
+                                <include>src/main/kotlin/**/*.kt</include>
+                                <include>src/test/kotlin/**/*.kt</include>
+                                <include>src/main/java/**/*.kt</include>
+                                <include>src/test/java/**/*.kt</include>
+                            </includes>
+                        </kotlin>
                     </configuration>
                     <executions>
                         <!-- Automatically format during normal local Maven builds. -->
