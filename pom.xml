@@ -22,6 +22,8 @@
 
         <kotlin.version>2.4.10</kotlin.version>
 
+        <spring-boot.version>4.1.0</spring-boot.version>
+
         <!-- one of DEFAULT, OFF, WARN, ERROR-->
         <explicit-null-marking-level>ERROR</explicit-null-marking-level>
         <error-prone-excluded-paths>.*/src/test/java/.*</error-prone-excluded-paths>
@@ -295,6 +297,7 @@
                     <groupId>org.jetbrains.kotlin</groupId>
                     <artifactId>kotlin-maven-plugin</artifactId>
                     <version>${kotlin.version}</version>
+
                     <configuration>
                         <args>
                             <arg>-Xjsr305=strict</arg>
@@ -305,7 +308,25 @@
                             <plugin>jpa</plugin>
                         </compilerPlugins>
                     </configuration>
+
                     <executions>
+                        <execution>
+                            <id>kapt</id>
+                            <goals>
+                                <goal>kapt</goal>
+                            </goals>
+                            <configuration>
+                                <includeCompileClasspath>false</includeCompileClasspath>
+
+                                <annotationProcessorPaths>
+                                    <annotationProcessorPath>
+                                        <groupId>org.springframework.boot</groupId>
+                                        <artifactId>spring-boot-configuration-processor</artifactId>
+                                        <version>${spring-boot.version}</version>
+                                    </annotationProcessorPath>
+                                </annotationProcessorPaths>
+                            </configuration>
+                        </execution>
                         <execution>
                             <id>compile</id>
                             <phase>compile</phase>
@@ -313,6 +334,7 @@
                                 <goal>compile</goal>
                             </goals>
                         </execution>
+
                         <execution>
                             <id>test-compile</id>
                             <phase>test-compile</phase>
@@ -321,14 +343,16 @@
                             </goals>
                         </execution>
                     </executions>
+
                     <dependencies>
-                        <!-- kotlin-maven-allopen required by plugin spring -->
+                        <!-- Required by the spring compiler plugin -->
                         <dependency>
                             <groupId>org.jetbrains.kotlin</groupId>
                             <artifactId>kotlin-maven-allopen</artifactId>
                             <version>${kotlin.version}</version>
                         </dependency>
-                        <!-- kotlin-maven-allopen required by plugin jpa -->
+
+                        <!-- Required by the jpa compiler plugin -->
                         <dependency>
                             <groupId>org.jetbrains.kotlin</groupId>
                             <artifactId>kotlin-maven-noarg</artifactId>
