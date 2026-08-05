@@ -22,7 +22,8 @@
 
         <kotlin.version>2.4.10</kotlin.version>
 
-        <spring-boot.version>4.1.0</spring-boot.version>
+        <!-- project.parent.version is always the spring boot version -->
+        <spring-boot.version>${project.parent.version}</spring-boot.version>
 
         <!-- one of DEFAULT, OFF, WARN, ERROR-->
         <explicit-null-marking-level>ERROR</explicit-null-marking-level>
