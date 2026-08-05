@@ -2,6 +2,7 @@
 
 ## 4.1.0-2026.8.0
 
+- Added property `spring-boot.version` that is always the same as the version of the `spring-boot-starter-parent`
 - `kotlin-maven-plugin` now in `pluginManagement`
 - `uetlib-bom` updated to
   `2026.7.6`: [Changelog/2026.7.6](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202676) [Diff/2026.7.5-2026.7.6](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.7.5...v2026.7.6)
