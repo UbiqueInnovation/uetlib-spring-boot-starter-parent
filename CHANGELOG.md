@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 4.1.0-2026.8.2
+
+- `uetlib-bom` updated to
+  `2026.8.1`: [Changelog/2026.8.1](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202681) [Diff/2026.7.6-2026.8.1](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.7.6...v2026.8.1)
+
 ## 4.1.0-2026.8.1
 
 - Added property `spring-boot.version` that is always the same as the version of the `spring-boot-starter-parent`
