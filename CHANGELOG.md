@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 4.1.0-2026.8.3
+
+- Fix `spring-boot.version`. Must be duplicated, as `project.parent.version` is always relative to the project
+  executing, not the current file it is defined.
+
 ## 4.1.0-2026.8.2
 
 - `uetlib-bom` updated to
