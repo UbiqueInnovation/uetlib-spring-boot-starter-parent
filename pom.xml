@@ -34,10 +34,12 @@
         <westemeyer-version-package-name>${project.groupId}.version</westemeyer-version-package-name>
 
         <!-- Sonar & Jacoco coverage reports -->
-        <!-- Set sonar.coverage.module to just '.' for single module projects (where it itself is the coverage module -->
+        <!-- Set sonar.coverage.module to the name of the module holding the aggregated jacoco report:
+             the current module's own name for single-module projects (the default), or another
+             module's name (e.g. a dedicated `{{project}}-coverage` module) for multi-module projects -->
         <sonar.coverage.module>${project.artifactId}</sonar.coverage.module>
         <sonar.coverage.jacoco.xmlReportPaths>
-            ${project.basedir}/${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml
+            ${project.basedir}/../${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectName>${project.artifactId}</sonar.projectName>
         <sonar.projectKey>UbiqueInnovation_${sonar.projectName}</sonar.projectKey>
