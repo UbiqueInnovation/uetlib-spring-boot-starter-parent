@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## 4.1.0-2026.8.4
+
+- Fix `<sonar.coverage.jacoco.xmlReportPaths>` to resolve via
+  `${project.basedir}/../${sonar.coverage.module}`, matching `uetlib-parent`. This also fixes the outdated comment that
+  suggested setting `sonar.coverage.module` to `.` for single-module projects.
+  `sonar.coverage.module` must always be a plain module name, never `.` or a path with `../` in it:
+    - For single-module projects, leave it unset to inherit the default (the module's own name):
+      ```xml
+      <sonar.coverage.module>${project.artifactId}</sonar.coverage.module>
+      ```
+    - For multi-module projects, override it with the name of the module holding the aggregated jacoco report, e.g.
+      ```xml
+      <sonar.coverage.module>post-coverage</sonar.coverage.module>
+      ```
+- `uetlib-bom` updated to
+  `2026.8.2`: [Changelog/2026.8.2](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202682) [Diff/2026.8.1-2026.8.2](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.8.1...v2026.8.2)
+- `uetlib-self-bom` updated to
+  `5.2.0`: [Changelog/5.2.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#520) [Diff/5.0.3-5.2.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.0.3...v5.2.0)
+- Updated plugins
+
 ## 4.1.0-2026.8.3
 
 - Fix `spring-boot.version`. Must be duplicated, as `project.parent.version` is always relative to the project
