@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 4.1.0-2026.8.5
+
+- Fix `sonar.coverage.jacoco.xmlReportPaths` again
+
+
 ## 4.1.0-2026.8.4
 
 - Fix `<sonar.coverage.jacoco.xmlReportPaths>` to resolve via
