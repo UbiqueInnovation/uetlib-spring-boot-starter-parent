@@ -1,9 +1,13 @@
 # CHANGELOG
 
+## 4.1.0-2026.8.6
+
+- Update `de.westemeyer:artifact-version-maven-plugin` to `2.1.0`, which is fully null-marked. Property
+  `westemeyer-version-package-name` is no longer used and can be removed.
+
 ## 4.1.0-2026.8.5
 
 - Fix `sonar.coverage.jacoco.xmlReportPaths` again
-
 
 ## 4.1.0-2026.8.4
 
