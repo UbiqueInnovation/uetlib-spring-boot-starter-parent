@@ -30,9 +30,6 @@
         <explicit-null-marking-level>ERROR</explicit-null-marking-level>
         <error-prone-excluded-paths>.*/src/test/java/.*</error-prone-excluded-paths>
 
-        <!-- westemeyer version config -->
-        <westemeyer-version-package-name>${project.groupId}.version</westemeyer-version-package-name>
-
         <!-- Sonar & Jacoco coverage reports -->
         <!-- Set sonar.coverage.module to the name of the module holding the aggregated jacoco report:
              the current module's own name for single-module projects (the default), or another
@@ -50,6 +47,13 @@
         <sonar.organization>ubiqueinnovation</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -372,7 +376,7 @@
                 <plugin>
                     <groupId>de.westemeyer</groupId>
                     <artifactId>artifact-version-maven-plugin</artifactId>
-                    <version>2.0.1</version>
+                    <version>2.1.0</version>
                     <executions>
                         <execution>
                             <goals>
@@ -382,7 +386,6 @@
                     </executions>
                     <configuration>
                         <serviceType>NATIVE</serviceType>
-                        <packageName>${westemeyer-version-package-name}</packageName>
                     </configuration>
                 </plugin>
 
