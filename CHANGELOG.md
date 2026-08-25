@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 4.1.1-2026.8.7
+
+- Spring Boot updated to `4.1.1` (`spring-boot-starter-parent` and the `spring-boot.version` property)
+- `spring-cloud-dependencies` updated to `2025.1.3`
+- Update `de.westemeyer:artifact-version-maven-plugin` to `3.0.0`
+- `uetlib-bom` updated to
+  `2026.8.4`: [Changelog/2026.8.4](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202684) [Diff/2026.8.2-2026.8.4](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.8.2...v2026.8.4)
+- `uetlib-self-bom` updated to
+  `5.3.0`: [Changelog/5.3.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#530) [Diff/5.2.0-5.3.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.2.0...v5.3.0)
+
 ## 4.1.0-2026.8.6
 
 - Update `de.westemeyer:artifact-version-maven-plugin` to `2.1.0`, which is fully null-marked. Property
