@@ -31,17 +31,14 @@
         <error-prone-excluded-paths>.*/src/test/java/.*</error-prone-excluded-paths>
 
         <!-- Sonar & Jacoco coverage reports -->
-        <!-- Set sonar.coverage.module to the name of the module holding the aggregated jacoco report:
-             the current module's own name for single-module projects (the default), or another
-             module's name (e.g. a dedicated `{{project}}-coverage` module) for multi-module projects -->
-        <sonar.coverage.module>${project.artifactId}</sonar.coverage.module>
-        <!-- Path to the JaCoCo XML report. For a multi-module project with a dedicated
-            coverage module, override sonar.coverage.module in the project parent.
-            For a single-module project, leave the default (the current project's
-            artifactId) so the report is expected at target/site/jacoco-aggregate/jacoco.xml. -->
-        <sonar.coverage.jacoco.xmlReportPaths>
-            ${maven.multiModuleProjectDirectory}/${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml
-        </sonar.coverage.jacoco.xmlReportPaths>
+        <!-- Directory holding the aggregated JaCoCo report, relative to the root of the Maven build
+             (${maven.multiModuleProjectDirectory}, i.e. the directory mvn was invoked in):
+             - single-module project: the build root itself, `.` (the default) - the report is written
+               to the project's own target/site/jacoco-aggregate/jacoco.xml
+             - multi-module project: the module running jacoco:report-aggregate, overridden once in the
+               project parent, e.g. <sonar.coverage.module>{{project}}-coverage</sonar.coverage.module> -->
+        <sonar.coverage.module>.</sonar.coverage.module>
+        <sonar.coverage.jacoco.xmlReportPaths>${maven.multiModuleProjectDirectory}/${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectName>${project.artifactId}</sonar.projectName>
         <sonar.projectKey>UbiqueInnovation_${sonar.projectName}</sonar.projectKey>
         <sonar.organization>ubiqueinnovation</sonar.organization>
