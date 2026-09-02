@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 4.1.1-2026.9.0
+
+- Fix `sonar.coverage.jacoco.xmlReportPaths` for single-module projects: `sonar.coverage.module` now defaults to `.`
+  (the root of the Maven build) instead of `${project.artifactId}`, which resolved to `<root>/<artifactId>/target/...`
+  and made Sonar report *"No coverage report can be found"*. Multi-module projects are unaffected: they keep overriding
+  `sonar.coverage.module` with their dedicated `{{project}}-coverage` module. Matches `uetlib-parent`
+  `2026.8.4`.
+- `uetlib-bom` updated to
+  `5.4.0`: [Changelog/5.4.0](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#540) [Diff/5.3.0-5.4.0](https://github.com/UbiqueInnovation/uetlib-bom/compare/v5.3.0...v5.4.0)
+- `uetlib-self-bom` updated to
+  `2026.9.0`: [Changelog/2026.9.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#202690) [Diff/2026.8.4-2026.9.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v2026.8.4...v2026.9.0)
+
 ## 4.1.1-2026.8.7
 
 - Spring Boot updated to `4.1.1` (`spring-boot-starter-parent` and the `spring-boot.version` property)
