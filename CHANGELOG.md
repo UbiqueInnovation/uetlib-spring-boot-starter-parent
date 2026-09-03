@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 4.1.1-2026.9.2
+
+- `uetlib-bom` updated to
+  `2026.9.2`: [Changelog/2026.9.2](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202692) [Diff/2026.9.0-2026.9.1](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.9.0...v2026.9.1)
+- `uetlib-self-bom` updated to
+  `5.4.2`: [Changelog/5.4.2](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#542) [Diff/5.4.0-5.4.1](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.4.0...v5.4.1)
+
 ## 4.1.1-2026.9.1
 
 - `uetlib-bom` updated to
