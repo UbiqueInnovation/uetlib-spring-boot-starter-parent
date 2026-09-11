@@ -2,7 +2,10 @@
 
 ## 4.1.1-2026.9.3
 
-- add `uetlib-cores` annotations `NullOrNotBlank` and `NullOrNotEmpty` as custom nullable annotations
+- add `uetlib-core`'s annotations `NullOrNotBlank` and `NullOrNotEmpty` as custom nullable annotations
+- `uetlib-self-bom` updated to
+  `5.4.3`: [Changelog/5.4.3](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#543) [Diff/5.4.2-5.4.3](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.4.2...v5.4.3)
+- Update `spotless` and `kotlin.version`
 
 ## 4.1.1-2026.9.2
 
