@@ -152,6 +152,10 @@
                         </annotationProcessorPathsUseDepMgmt>
                         <annotationProcessorPaths>
                             <path>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-configuration-processor</artifactId>
+                            </path>
+                            <path>
                                 <groupId>com.google.errorprone</groupId>
                                 <artifactId>error_prone_core</artifactId>
                             </path>
@@ -163,7 +167,9 @@
                         <compilerArgs>
                             <arg>--should-stop=ifError=FLOW</arg>
                             <arg>-XDcompilePolicy=simple</arg>
-                            <arg>-Xplugin:ErrorProne \
+
+                            <arg>
+                                -Xplugin:ErrorProne \
                                 -XepDisableAllChecks \
                                 -Xep:NullAway:ERROR \
                                 -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} \
@@ -172,7 +178,8 @@
                                 -XepOpt:NullAway:TreatGeneratedAsUnannotated=true \
                                 -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated \
                                 -XepOpt:NullAway:JSpecifyMode=true \
-                                -XepOpt:NullAway:OnlyNullMarked
+                                -XepOpt:NullAway:OnlyNullMarked \
+                                -XepOpt:NullAway:CustomNullableAnnotations=ch.ubique.backend.core.validator.NullOrNotBlank,ch.ubique.backend.core.validator.NullOrNotEmpty
                             </arg>
 
                             <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
