@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 4.1.1-2026.9.4
+
+- `uetlib-bom` updated to
+  `2026.9.1`: [Changelog/2026.9.1](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#202691) [Diff/2026.9.0-2026.9.1](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.9.0...v2026.9.1)
+- `uetlib-self-bom` updated to
+  `5.5.0`: [Changelog/5.5.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#550) [Diff/5.4.3-5.5.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.4.3...v5.5.0)
+
 ## 4.1.1-2026.9.3
 
 - add `uetlib-core`'s annotations `NullOrNotBlank` and `NullOrNotEmpty` as custom nullable annotations
