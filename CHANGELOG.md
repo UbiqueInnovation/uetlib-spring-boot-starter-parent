@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.1-2026.9.5
+
+- Fix Error Prone compilation on Windows by keeping its compiler flags on one line when the compiler is forked.
+
 ## 4.1.1-2026.9.4
 
 - `uetlib-bom` updated to
