@@ -168,19 +168,8 @@
                             <arg>--should-stop=ifError=FLOW</arg>
                             <arg>-XDcompilePolicy=simple</arg>
 
-                            <arg>
-                                -Xplugin:ErrorProne \
-                                -XepDisableAllChecks \
-                                -Xep:NullAway:ERROR \
-                                -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} \
-                                -XepDisableWarningsInGeneratedCode \
-                                -XepExcludedPaths:${error-prone-excluded-paths} \
-                                -XepOpt:NullAway:TreatGeneratedAsUnannotated=true \
-                                -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated \
-                                -XepOpt:NullAway:JSpecifyMode=true \
-                                -XepOpt:NullAway:OnlyNullMarked \
-                                -XepOpt:NullAway:CustomNullableAnnotations=ch.ubique.backend.core.validator.NullOrNotBlank,ch.ubique.backend.core.validator.NullOrNotEmpty
-                            </arg>
+                            <!-- Keep Error Prone flags on one line: multiline args fail on Windows when the compiler is forked. -->
+                            <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:NullAway:ERROR -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} -XepDisableWarningsInGeneratedCode -XepExcludedPaths:${error-prone-excluded-paths} -XepOpt:NullAway:TreatGeneratedAsUnannotated=true -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated -XepOpt:NullAway:JSpecifyMode=true -XepOpt:NullAway:OnlyNullMarked -XepOpt:NullAway:CustomNullableAnnotations=ch.ubique.backend.core.validator.NullOrNotBlank,ch.ubique.backend.core.validator.NullOrNotEmpty</arg>
 
                             <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                             <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
