@@ -38,7 +38,9 @@
              - multi-module project: the module running jacoco:report-aggregate, overridden once in the
                project parent, e.g. <sonar.coverage.module>{{project}}-coverage</sonar.coverage.module> -->
         <sonar.coverage.module>.</sonar.coverage.module>
-        <sonar.coverage.jacoco.xmlReportPaths>${maven.multiModuleProjectDirectory}/${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ${maven.multiModuleProjectDirectory}/${sonar.coverage.module}/target/site/jacoco-aggregate/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectName>${project.artifactId}</sonar.projectName>
         <sonar.projectKey>UbiqueInnovation_${sonar.projectName}</sonar.projectKey>
         <sonar.organization>ubiqueinnovation</sonar.organization>
@@ -92,26 +94,19 @@
 
     <repositories>
         <repository>
-            <id>ubique-artifactory</id>
-            <name>backend</name>
-            <url>https://artifactory.ubique.ch/artifactory/backend</url>
+            <id>ubique-artifactory-virtual</id>
+            <name>ubique</name>
+            <url>https://artifactory.ubique.ch/artifactory/ubique</url>
         </repository>
+    </repositories>
+
+    <distributionManagement>
         <repository>
             <id>ubique-artifactory-virtual</id>
             <name>ubique</name>
             <url>https://artifactory.ubique.ch/artifactory/ubique</url>
         </repository>
-        <repository>
-            <id>osgeo</id>
-            <name>Open Source Geospatial Foundation Repository</name>
-            <url>https://repo.osgeo.org/repository/release/</url>
-        </repository>
-        <repository>
-            <id>unidata-all</id>
-            <name>Unidata All</name>
-            <url>https://artifacts.unidata.ucar.edu/all</url>
-        </repository>
-    </repositories>
+    </distributionManagement>
 
     <build>
         <!-- finalName to fix the name of the resulting jar -->
