@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.1-2026.10.0
+
+- Compile Kotlin before Java and include both source directories by default for mixed Java/Kotlin modules.
+
 ## 4.1.1-2026.9.5
 
 - Fix Error Prone compilation on Windows by keeping its compiler flags on one line when the compiler is forked.
