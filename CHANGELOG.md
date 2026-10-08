@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 4.1.1-2026.10.1
+
+- `uetlib-bom` updated to
+  `2026.10.0`: [Changelog/2026.10.0](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026100) [Diff/2026.9.1-2026.10.0](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.9.1...v2026.10.0)
+- `uetlib-self-bom` updated to
+  `5.6.0`: [Changelog/5.6.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#560) [Diff/5.5.0-5.6.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.5.0...v5.6.0)
+- Update `spotless-maven-plugin` to `3.10.3`, which supports Java 27:
+  
 ## 4.1.1-2026.10.0
 
 - Compile Kotlin before Java and include both source directories by default for mixed Java/Kotlin modules.
