@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 4.1.1-2026.10.3
+
+- `uetlib-self-bom` updated to
+  `5.7.0`: [Changelog/5.7.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#570) [Diff/5.6.0-5.7.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.6.0...v5.7.0)
+
 ## 4.1.1-2026.10.2
 
 - Enable Error Prone checks for incompatible collection and equality types, ignored return values, `equals`/`hashCode`, array comparisons, primitive arrays passed to `Arrays.asList`, `compareTo`, dead exceptions, and format strings. Enable `ReferenceEquality` and `FutureReturnValueIgnored` as warnings. Exclude generated sources from these checks.
