@@ -15,7 +15,7 @@
     <groupId>ch.ubique.uetlib</groupId>
     <artifactId>uetlib-spring-boot-starter-parent</artifactId>
     <packaging>pom</packaging>
-    <version>2027.0.0-SNAPSHOT</version>
+    <version>4.1.1-2027.0.0-SNAPSHOT</version>
     <name>Uetlib-wrapped Spring Boot Starter Parent</name>
 
     <properties>
@@ -69,7 +69,7 @@
             <dependency>
                 <groupId>ch.ubique.uetlib</groupId>
                 <artifactId>uetlib-bom</artifactId>
-                <version>2026.10.0</version>
+                <version>2026.11.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -77,7 +77,7 @@
             <dependency>
                 <groupId>ch.ubique.uetlib</groupId>
                 <artifactId>uetlib-self-bom</artifactId>
-                <version>5.7.0</version>
+                <version>6.0.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

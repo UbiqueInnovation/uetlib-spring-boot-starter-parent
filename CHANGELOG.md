@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 4.1.1-2026.11.0 (unreleased)
+
+### Breaking changes
+
+- Move Maven coordinates from `ch.ubique:uetlib-*` to `ch.ubique.uetlib:uetlib-*`.
+- Align uetlib parent, BOM and library references with the migration releases.
+
 ## 4.1.1-2026.10.3
 
 - `uetlib-self-bom` updated to

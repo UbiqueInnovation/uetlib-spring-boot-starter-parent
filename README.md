@@ -24,7 +24,7 @@ In the given order:
   <parent>
     <groupId>ch.ubique.uetlib</groupId>
     <artifactId>uetlib-spring-boot-starter-parent</artifactId>
-    <version>4.0.5-2027.7.4</version>
+    <version>4.1.1-2026.11.0</version>
   </parent>
   ```
 - No `spring-cloud-dependencies`/`uetlib-bom`/`uetlib-self-bom` dependency management is necessary
