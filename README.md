@@ -7,8 +7,8 @@ for uetlib-using projects.
 
 In the given order:
 
-- `ch.ubique:uetlib-bom`
-- `ch.ubique:uetlib-self-bom`
+- `ch.ubique.uetlib:uetlib-bom`
+- `ch.ubique.uetlib:uetlib-self-bom`
 - `org.springframework.cloud:spring-cloud-dependencies`
 
 ## Plugin Management
@@ -22,7 +22,7 @@ In the given order:
 - Include as parent
   ```xml
   <parent>
-    <groupId>ch.ubique</groupId>
+    <groupId>ch.ubique.uetlib</groupId>
     <artifactId>uetlib-spring-boot-starter-parent</artifactId>
     <version>4.0.5-2027.7.4</version>
   </parent>
