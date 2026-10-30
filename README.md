@@ -85,3 +85,11 @@ Hence, starting from `4.1.0-2027.7.4` the next version can be one of three scena
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md)
+
+## License
+
+Except where otherwise noted, original uetlib code is licensed under the [Apache License 2.0](LICENSE). Third-party files retain their original license terms; see [NOTICE](NOTICE) and any third-party notices in this repository.
+
+## Publishing and license metadata
+
+This parent has no default deployment destination. Consuming projects must configure their own publishing destination, such as an internal registry. Maven Central publishing is invoked explicitly by uetlib release workflows. The parent's Apache-2.0 metadata describes this parent; inheriting it does not license your application. Applications should declare their own project/license metadata rather than relying on inherited library metadata.
