@@ -18,6 +18,27 @@
     <version>4.1.1-2027.0.0-SNAPSHOT</version>
     <name>Uetlib-wrapped Spring Boot Starter Parent</name>
 
+    <description>Spring Boot parent with uetlib dependency and build conventions.</description>
+    <url>https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <organization>
+        <name>Ubique Innovation AG</name>
+        <url>https://www.ubique.ch</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>Ubique Innovation AG</name>
+            <organization>Ubique Innovation AG</organization>
+            <organizationUrl>https://www.ubique.ch</organizationUrl>
+        </developer>
+    </developers>
+
     <properties>
         <java.version>25</java.version>
 
@@ -92,21 +113,7 @@
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
-        <repository>
-            <id>ubique-artifactory-virtual</id>
-            <name>ubique</name>
-            <url>https://artifactory.ubique.ch/artifactory/ubique</url>
-        </repository>
-    </repositories>
 
-    <distributionManagement>
-        <repository>
-            <id>ubique-artifactory-virtual</id>
-            <name>ubique</name>
-            <url>https://artifactory.ubique.ch/artifactory/ubique</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <!-- finalName to fix the name of the resulting jar -->
@@ -164,7 +171,7 @@
                             <arg>-XDcompilePolicy=simple</arg>
 
                             <!-- Keep Error Prone flags on one line: multiline args fail on Windows when the compiler is forked. -->
-                            <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:CollectionIncompatibleType:ERROR -Xep:EqualsIncompatibleType:ERROR -Xep:ReturnValueIgnored:ERROR -Xep:EqualsHashCode:ERROR -Xep:ArrayEquals:ERROR -Xep:ArraysAsListPrimitiveArray:ERROR -Xep:CompareToZero:ERROR -Xep:DeadException:ERROR -Xep:FormatString:ERROR -Xep:ReferenceEquality:WARN -Xep:FutureReturnValueIgnored:WARN -Xep:NullAway:ERROR -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} -XepDisableWarningsInGeneratedCode -XepExcludedPaths:${error-prone-excluded-paths} -XepOpt:NullAway:TreatGeneratedAsUnannotated=true -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated -XepOpt:NullAway:JSpecifyMode=true -XepOpt:NullAway:OnlyNullMarked -XepOpt:NullAway:CustomNullableAnnotations=ch.ubique.backend.core.validator.NullOrNotBlank,ch.ubique.backend.core.validator.NullOrNotEmpty</arg>
+                            <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:CollectionIncompatibleType:ERROR -Xep:EqualsIncompatibleType:ERROR -Xep:ReturnValueIgnored:ERROR -Xep:EqualsHashCode:ERROR -Xep:ArrayEquals:ERROR -Xep:ArraysAsListPrimitiveArray:ERROR -Xep:CompareToZero:ERROR -Xep:DeadException:ERROR -Xep:FormatString:ERROR -Xep:ReferenceEquality:WARN -Xep:FutureReturnValueIgnored:WARN -Xep:NullAway:ERROR -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} -XepDisableWarningsInGeneratedCode -XepExcludedPaths:${error-prone-excluded-paths} -XepOpt:NullAway:TreatGeneratedAsUnannotated=true -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated -XepOpt:NullAway:JSpecifyMode=true -XepOpt:NullAway:OnlyNullMarked -XepOpt:NullAway:CustomNullableAnnotations=ch.ubique.uetlib.core.validator.NullOrNotBlank,ch.ubique.uetlib.core.validator.NullOrNotEmpty</arg>
 
                             <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                             <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
@@ -408,7 +415,28 @@
         </pluginManagement>
     </build>
 
-    <scm child.scm.url.inherit.append.path="false">
+    <!-- Public upstreams for GeoTools and netCDF, which are not hosted on Central. -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>osgeo</id>
+            <url>https://repo.osgeo.org/repository/release/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>unidata-all</id>
+            <url>https://artifacts.unidata.ucar.edu/repository/unidata-all/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
+
+    <scm child.scm.url.inherit.append.path="false" child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false">
+        <connection>scm:git:https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent.git</developerConnection>
         <url>https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent</url>
     </scm>
 </project>
