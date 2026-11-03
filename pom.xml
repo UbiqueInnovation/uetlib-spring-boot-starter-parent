@@ -90,7 +90,7 @@
             <dependency>
                 <groupId>ch.ubique.uetlib</groupId>
                 <artifactId>uetlib-bom</artifactId>
-                <version>2026.11.0</version>
+                <version>2026.11.0-alpha.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -98,7 +98,7 @@
             <dependency>
                 <groupId>ch.ubique.uetlib</groupId>
                 <artifactId>uetlib-self-bom</artifactId>
-                <version>6.0.0</version>
+                <version>6.0.0-alpha.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -471,7 +471,7 @@
                             <publishingServerId>central</publishingServerId>
                             <deploymentName>${project.groupId}:${project.artifactId}:${project.version}</deploymentName>
                             <autoPublish>true</autoPublish>
-                            <waitUntil>published</waitUntil>
+                            <waitUntil>validated</waitUntil>
                             <skipPublishing>${central.publishing.skip}</skipPublishing>
                             <skipUpload>${central.publishing.skipUpload}</skipUpload>
                         </configuration>
