@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 4.1.2-2026.11.1
+
+- Update Spring Boot to 4.1.2
+- Update Spring Cloud to 2025.1.3
+- Load `ch.uetlib:uetlib-errorprone:0.1.1` on the annotation processor path and enable the
+  `OpenEnumStructure` and `OpenEnumNestedTypeImport` checks as errors.
+- Update shared Maven build and publish workflows to v0.2.4.
+
 ## 4.1.1-2026.11.0
 
 - Move Java packages and class references from `ch.ubique.uetlib` to `ch.uetlib`.
