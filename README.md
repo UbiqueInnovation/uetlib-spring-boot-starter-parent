@@ -7,8 +7,8 @@ for uetlib-using projects.
 
 In the given order:
 
-- `ch.ubique:uetlib-bom`
-- `ch.ubique:uetlib-self-bom`
+- `ch.uetlib:uetlib-bom`
+- `ch.uetlib:uetlib-self-bom`
 - `org.springframework.cloud:spring-cloud-dependencies`
 
 ## Plugin Management
@@ -22,9 +22,9 @@ In the given order:
 - Include as parent
   ```xml
   <parent>
-    <groupId>ch.ubique</groupId>
+    <groupId>ch.uetlib</groupId>
     <artifactId>uetlib-spring-boot-starter-parent</artifactId>
-    <version>4.0.5-2027.7.4</version>
+    <version>4.1.1-2026.11.0</version>
   </parent>
   ```
 - No `spring-cloud-dependencies`/`uetlib-bom`/`uetlib-self-bom` dependency management is necessary
@@ -85,3 +85,11 @@ Hence, starting from `4.1.0-2027.7.4` the next version can be one of three scena
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md)
+
+## License
+
+Except where otherwise noted, original uetlib code is licensed under the [Apache License 2.0](LICENSE). Third-party files retain their original license terms; see [NOTICE](NOTICE) and any third-party notices in this repository.
+
+## Publishing and license metadata
+
+This parent has no default deployment destination. Consuming projects must configure their own publishing destination, such as an internal registry. Maven Central publishing is invoked explicitly by uetlib release workflows. The parent's Apache-2.0 metadata describes this parent; inheriting it does not license your application. Applications should declare their own project/license metadata rather than relying on inherited library metadata.
