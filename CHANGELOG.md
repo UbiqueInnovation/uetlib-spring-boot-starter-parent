@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 4.1.2-2026.11.1
+## 4.1.2-2026.11.2
 
 - Update Spring Boot to 4.1.2
 - Update Spring Cloud to 2025.1.3
