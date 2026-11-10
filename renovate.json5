@@ -3,10 +3,6 @@
     "extends": [
         "github>UbiqueInnovation/uetlib:renovate-base.json5"
     ],
-    "reviewers": [
-        "dsparber",
-        "kistlers"
-    ],
     "schedule": [
         // before 3am on the third day of the week
         "* 0-3 * * 3"

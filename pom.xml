@@ -8,15 +8,36 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <!-- NEEDS TO BE KEPT IN SYNC WITH spring-boot.version BELOW -->
-        <version>4.1.1</version>
+        <version>4.1.2</version>
         <relativePath/>
     </parent>
 
-    <groupId>ch.ubique</groupId>
+    <groupId>ch.uetlib</groupId>
     <artifactId>uetlib-spring-boot-starter-parent</artifactId>
     <packaging>pom</packaging>
-    <version>2027.0.0-SNAPSHOT</version>
+    <version>4.1.2-2027.0.0-SNAPSHOT</version>
     <name>Uetlib-wrapped Spring Boot Starter Parent</name>
+
+    <description>Spring Boot parent with uetlib dependency and build conventions.</description>
+    <url>https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <organization>
+        <name>Ubique Innovation AG</name>
+        <url>https://www.ubique.ch</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>Ubique Innovation AG</name>
+            <organization>Ubique Innovation AG</organization>
+            <organizationUrl>https://www.ubique.ch</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>25</java.version>
@@ -67,17 +88,17 @@
             -->
 
             <dependency>
-                <groupId>ch.ubique</groupId>
+                <groupId>ch.uetlib</groupId>
                 <artifactId>uetlib-bom</artifactId>
-                <version>2026.10.0</version>
+                <version>2026.11.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
             <dependency>
-                <groupId>ch.ubique</groupId>
+                <groupId>ch.uetlib</groupId>
                 <artifactId>uetlib-self-bom</artifactId>
-                <version>5.7.0</version>
+                <version>6.0.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -85,28 +106,14 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2025.1.3</version>
+                <version>2025.1.4</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
-        <repository>
-            <id>ubique-artifactory-virtual</id>
-            <name>ubique</name>
-            <url>https://artifactory.ubique.ch/artifactory/ubique</url>
-        </repository>
-    </repositories>
 
-    <distributionManagement>
-        <repository>
-            <id>ubique-artifactory-virtual</id>
-            <name>ubique</name>
-            <url>https://artifactory.ubique.ch/artifactory/ubique</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <!-- finalName to fix the name of the resulting jar -->
@@ -155,6 +162,11 @@
                                 <artifactId>error_prone_core</artifactId>
                             </path>
                             <path>
+                                <groupId>ch.uetlib</groupId>
+                                <artifactId>uetlib-errorprone</artifactId>
+                                <version>0.1.1</version>
+                            </path>
+                            <path>
                                 <groupId>com.uber.nullaway</groupId>
                                 <artifactId>nullaway</artifactId>
                             </path>
@@ -164,7 +176,7 @@
                             <arg>-XDcompilePolicy=simple</arg>
 
                             <!-- Keep Error Prone flags on one line: multiline args fail on Windows when the compiler is forked. -->
-                            <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:CollectionIncompatibleType:ERROR -Xep:EqualsIncompatibleType:ERROR -Xep:ReturnValueIgnored:ERROR -Xep:EqualsHashCode:ERROR -Xep:ArrayEquals:ERROR -Xep:ArraysAsListPrimitiveArray:ERROR -Xep:CompareToZero:ERROR -Xep:DeadException:ERROR -Xep:FormatString:ERROR -Xep:ReferenceEquality:WARN -Xep:FutureReturnValueIgnored:WARN -Xep:NullAway:ERROR -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} -XepDisableWarningsInGeneratedCode -XepExcludedPaths:${error-prone-excluded-paths} -XepOpt:NullAway:TreatGeneratedAsUnannotated=true -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated -XepOpt:NullAway:JSpecifyMode=true -XepOpt:NullAway:OnlyNullMarked -XepOpt:NullAway:CustomNullableAnnotations=ch.ubique.backend.core.validator.NullOrNotBlank,ch.ubique.backend.core.validator.NullOrNotEmpty</arg>
+                            <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:OpenEnumStructure:ERROR -Xep:OpenEnumNestedTypeImport:ERROR -Xep:CollectionIncompatibleType:ERROR -Xep:EqualsIncompatibleType:ERROR -Xep:ReturnValueIgnored:ERROR -Xep:EqualsHashCode:ERROR -Xep:ArrayEquals:ERROR -Xep:ArraysAsListPrimitiveArray:ERROR -Xep:CompareToZero:ERROR -Xep:DeadException:ERROR -Xep:FormatString:ERROR -Xep:ReferenceEquality:WARN -Xep:FutureReturnValueIgnored:WARN -Xep:NullAway:ERROR -Xep:RequireExplicitNullMarking:${explicit-null-marking-level} -XepDisableWarningsInGeneratedCode -XepExcludedPaths:${error-prone-excluded-paths} -XepOpt:NullAway:TreatGeneratedAsUnannotated=true -XepOpt:NullAway:GeneratedCodeAnnotations=com.google.protobuf.Generated -XepOpt:NullAway:JSpecifyMode=true -XepOpt:NullAway:OnlyNullMarked -XepOpt:NullAway:CustomNullableAnnotations=ch.uetlib.core.validator.NullOrNotBlank,ch.uetlib.core.validator.NullOrNotEmpty</arg>
 
                             <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                             <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
@@ -408,7 +420,120 @@
         </pluginManagement>
     </build>
 
-    <scm child.scm.url.inherit.append.path="false">
+    <!-- Public upstreams for GeoTools and netCDF, which are not hosted on Central. -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>osgeo</id>
+            <url>https://repo.osgeo.org/repository/release/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>unidata-all</id>
+            <url>https://artifacts.unidata.ucar.edu/repository/unidata-all/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
+
+    <scm child.scm.url.inherit.append.path="false" child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false">
+        <connection>scm:git:https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent.git</developerConnection>
         <url>https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent</url>
     </scm>
+    <!-- Explicit opt-in: ordinary builds and private consumers do not publish to Central. -->
+    <profiles>
+        <profile>
+            <id>central-release</id>
+            <properties>
+                <central.publishing.skip>false</central.publishing.skip>
+                <central.publishing.skipUpload>false</central.publishing.skipUpload>
+            </properties>
+            <build>
+                <resources>
+                    <resource><directory>src/main/resources</directory></resource>
+                    <resource>
+                        <directory>${maven.multiModuleProjectDirectory}</directory>
+                        <targetPath>META-INF/uetlib</targetPath>
+                        <filtering>false</filtering>
+                        <includes>
+                            <include>LICENSE*</include><include>NOTICE*</include>
+                            <include>COPYING*</include><include>AUTHORS</include><include>CREDITS</include>
+                            <include>LICENSES/**</include><include>PROVENANCE.md</include>
+                        </includes>
+                    </resource>
+                </resources>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.12.0</version>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <deploymentName>${project.groupId}:${project.artifactId}:${project.version}</deploymentName>
+                            <autoPublish>true</autoPublish>
+                            <waitUntil>validated</waitUntil>
+                            <skipPublishing>${central.publishing.skip}</skipPublishing>
+                            <skipUpload>${central.publishing.skipUpload}</skipUpload>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>central-bundle</id>
+                                <phase>deploy</phase>
+                                <goals><goal>publish</goal></goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.8</version>
+                        <configuration>
+                            <bestPractices>true</bestPractices>
+                            <skip>${central.publishing.skip}</skip>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals><goal>sign</goal></goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.4.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <phase>package</phase>
+                                <goals><goal>jar-no-fork</goal></goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.12.0</version>
+                        <configuration><doclint>none</doclint><quiet>true</quiet></configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <phase>package</phase>
+                                <goals><goal>jar</goal></goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

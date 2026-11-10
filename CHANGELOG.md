@@ -1,5 +1,44 @@
 # CHANGELOG
 
+## 4.1.2-2026.11.2
+
+- Update Spring Boot to 4.1.2
+- Update Spring Cloud to 2025.1.3
+- Load `ch.uetlib:uetlib-errorprone:0.1.1` on the annotation processor path and enable the
+  `OpenEnumStructure` and `OpenEnumNestedTypeImport` checks as errors.
+- Update shared Maven build and publish workflows to v0.2.4.
+
+## 4.1.1-2026.11.0
+
+- Move Java packages and class references from `ch.ubique.uetlib` to `ch.uetlib`.
+
+### Breaking changes
+
+- Move Java packages from `ch.ubique.backend` to `ch.uetlib`, including class-name resources. The combined OpenRewrite
+  migration also renames known Spring configuration keys to `ch.uetlib.*`.
+- Remove the inherited Ubique Artifactory repository and deployment destination; private consumers must configure their
+  own registry.
+- Add Apache-2.0 licensing for original code, preserve third-party licenses, and add public project metadata and
+  contribution/security guidance.
+
+- Move Maven coordinates from `ch.ubique:uetlib-*` to `ch.uetlib:uetlib-*`.
+- Align uetlib parent, BOM and library references with the migration releases.
+
+### Migration
+
+After the migration releases and `uetlib-rewrite` are published, run this from the consuming project, then review the
+diff and run its tests:
+
+```sh
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:6.46.1:run \
+  -Drewrite.recipeArtifactCoordinates=ch.uetlib:uetlib-rewrite:RELEASE \
+  -Drewrite.activeRecipes=ch.uetlib.MigrateToPublicUetlib
+```
+
+The recipe updates Maven coordinates/versions, Java references and known class-name resources. Review application-owned
+packages under the old namespace, Kotlin, reflection patterns, native-access module flags and persisted class names
+separately. Use `:dryRun` instead of `:run` to preview a patch.
+
 ## 4.1.1-2026.10.3
 
 - `uetlib-self-bom` updated to
@@ -7,7 +46,9 @@
 
 ## 4.1.1-2026.10.2
 
-- Enable Error Prone checks for incompatible collection and equality types, ignored return values, `equals`/`hashCode`, array comparisons, primitive arrays passed to `Arrays.asList`, `compareTo`, dead exceptions, and format strings. Enable `ReferenceEquality` and `FutureReturnValueIgnored` as warnings. Exclude generated sources from these checks.
+- Enable Error Prone checks for incompatible collection and equality types, ignored return values, `equals`/`hashCode`,
+  array comparisons, primitive arrays passed to `Arrays.asList`, `compareTo`, dead exceptions, and format strings.
+  Enable `ReferenceEquality` and `FutureReturnValueIgnored` as warnings. Exclude generated sources from these checks.
 
 ## 4.1.1-2026.10.1
 
@@ -16,7 +57,7 @@
 - `uetlib-self-bom` updated to
   `5.6.0`: [Changelog/5.6.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#560) [Diff/5.5.0-5.6.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v5.5.0...v5.6.0)
 - Update `spotless-maven-plugin` to `3.10.3`, which supports Java 27
-  
+
 ## 4.1.1-2026.10.0
 
 - Compile Kotlin before Java and include both source directories by default for mixed Java/Kotlin modules.
