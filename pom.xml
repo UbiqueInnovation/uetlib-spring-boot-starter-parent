@@ -72,6 +72,8 @@
         <dependency>
             <groupId>org.jspecify</groupId>
             <artifactId>jspecify</artifactId>
+            <!-- Even though spring-boot manages this version, maven central rejects the upload without it -->
+            <version>${jspecify.version}</version>
         </dependency>
     </dependencies>
 
@@ -112,7 +114,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 
 
     <build>
@@ -425,23 +426,31 @@
         <repository>
             <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
-            <snapshots><enabled>false</enabled></snapshots>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
         <repository>
             <id>osgeo</id>
             <url>https://repo.osgeo.org/repository/release/</url>
-            <snapshots><enabled>false</enabled></snapshots>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
         <repository>
             <id>unidata-all</id>
             <url>https://artifacts.unidata.ucar.edu/repository/unidata-all/</url>
-            <snapshots><enabled>false</enabled></snapshots>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
-    <scm child.scm.url.inherit.append.path="false" child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false">
+    <scm child.scm.url.inherit.append.path="false" child.scm.connection.inherit.append.path="false"
+         child.scm.developerConnection.inherit.append.path="false">
         <connection>scm:git:https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent.git</developerConnection>
+        <developerConnection>scm:git:ssh://git@github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent.git
+        </developerConnection>
         <url>https://github.com/UbiqueInnovation/uetlib-spring-boot-starter-parent</url>
     </scm>
     <!-- Explicit opt-in: ordinary builds and private consumers do not publish to Central. -->
@@ -454,15 +463,21 @@
             </properties>
             <build>
                 <resources>
-                    <resource><directory>src/main/resources</directory></resource>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                    </resource>
                     <resource>
                         <directory>${maven.multiModuleProjectDirectory}</directory>
                         <targetPath>META-INF/uetlib</targetPath>
                         <filtering>false</filtering>
                         <includes>
-                            <include>LICENSE*</include><include>NOTICE*</include>
-                            <include>COPYING*</include><include>AUTHORS</include><include>CREDITS</include>
-                            <include>LICENSES/**</include><include>PROVENANCE.md</include>
+                            <include>LICENSE*</include>
+                            <include>NOTICE*</include>
+                            <include>COPYING*</include>
+                            <include>AUTHORS</include>
+                            <include>CREDITS</include>
+                            <include>LICENSES/**</include>
+                            <include>PROVENANCE.md</include>
                         </includes>
                     </resource>
                 </resources>
@@ -483,7 +498,9 @@
                             <execution>
                                 <id>central-bundle</id>
                                 <phase>deploy</phase>
-                                <goals><goal>publish</goal></goals>
+                                <goals>
+                                    <goal>publish</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
@@ -503,7 +520,9 @@
                             <execution>
                                 <id>sign-artifacts</id>
                                 <phase>verify</phase>
-                                <goals><goal>sign</goal></goals>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
@@ -515,7 +534,9 @@
                             <execution>
                                 <id>attach-sources</id>
                                 <phase>package</phase>
-                                <goals><goal>jar-no-fork</goal></goals>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
@@ -523,12 +544,17 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>3.12.0</version>
-                        <configuration><doclint>none</doclint><quiet>true</quiet></configuration>
+                        <configuration>
+                            <doclint>none</doclint>
+                            <quiet>true</quiet>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
                                 <phase>package</phase>
-                                <goals><goal>jar</goal></goals>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
