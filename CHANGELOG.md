@@ -1,12 +1,18 @@
 # CHANGELOG
 
+## 4.1.2-2026.11.4
+
+- `uetlib-bom` updated to
+  `2026.11.4`: [Changelog/2026.11.4](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026114) [Diff/2026.11.3-2026.11.4](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.11.3...v2026.11.4)
+
+- Align the Kotlin Spring Boot configuration processor with the inherited Spring Boot 4.1.2 parent.
+
 ## 4.1.2-2026.11.3
 
 - Update Spring Boot to 4.1.2
 - Update Spring Cloud to 2025.1.3
 - Load `ch.uetlib:uetlib-errorprone:0.1.1` on the annotation processor path and enable the
   `OpenEnumStructure` and `OpenEnumNestedTypeImport` checks as errors.
-- Update shared Maven build and publish workflows to v0.2.4.
 
 ## 4.1.1-2026.11.0
 
@@ -208,9 +214,7 @@ separately. Use `:dryRun` instead of `:run` to preview a patch.
 - Add default project sonar properties
 - Add more plugins not just as plugin management (default usages of these do not need to be specified in the plugin or
   management section):
-    - `com.diffplug.spotless:spotless-maven-plugin`: **USE IN TANDEM WITH
-      `uses: UbiqueInnovation/action-systems-mvn-install@v1.2.0` to have spotless fail on formatting errors in CI but
-      auto-apply locally.**
+    - `com.diffplug.spotless:spotless-maven-plugin`
     - `de.westemeyer:artifact-version-maven-plugin`
     - `org.jacoco:jacoco-maven-plugin`
 - Added to plugin management (see usage in the project below):
