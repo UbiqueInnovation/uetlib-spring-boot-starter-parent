@@ -2,6 +2,11 @@
 
 ## 4.1.2-2026.11.4
 
+- `uetlib-self-bom` updated to
+  `6.0.4`: [Changelog/6.0.4](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#604) [Diff/6.0.2-6.0.4](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v6.0.2...v6.0.4)
+
+## 4.1.2-2026.11.4
+
 - `uetlib-bom` updated to
   `2026.11.4`: [Changelog/2026.11.4](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026114) [Diff/2026.11.3-2026.11.4](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.11.3...v2026.11.4)
 
