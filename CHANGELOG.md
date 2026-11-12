@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.2-2026.11.5
+
+- Use shared Maven build and publish workflows at `v1.0.0` to enforce formatting checks in CI.
+
 ## 4.1.2-2026.11.4
 
 - `uetlib-self-bom` updated to
