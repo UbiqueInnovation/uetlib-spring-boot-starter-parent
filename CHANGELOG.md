@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 4.1.2-2026.11.6
+
+- `uetlib-self-bom` updated to
+  `6.0.6`: [Changelog/6.0.6](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#606) [Diff/6.0.4-6.0.6](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v6.0.4...v6.0.6)
+
 ## 4.1.2-2026.11.5
 
 - Use shared Maven build and publish workflows at `v1.0.0` to enforce formatting checks in CI.
