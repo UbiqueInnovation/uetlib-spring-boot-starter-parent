@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 4.1.2-2026.11.7
+
+- Use shared Maven workflows at `v1.1.0`: wait for the SonarCloud quality gate and analyse with the
+  uetlib-only Sonar token.
+
 ## 4.1.2-2026.11.6
 
 - `uetlib-self-bom` updated to
