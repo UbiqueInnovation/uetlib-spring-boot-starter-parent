@@ -42,7 +42,7 @@
     <properties>
         <java.version>25</java.version>
 
-        <kotlin.version>2.4.20</kotlin.version>
+        <kotlin.version>2.4.21</kotlin.version>
 
         <!-- NEEDS TO BE KEPT IN SYNC WITH spring-boot-starter-parent.version ABOVE -->
         <spring-boot.version>4.1.2</spring-boot.version>
@@ -406,7 +406,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.15</version>
+                    <version>0.8.16</version>
                     <executions>
                         <execution>
                             <id>prepare-agent</id>
