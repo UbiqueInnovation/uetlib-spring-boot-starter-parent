@@ -2,7 +2,7 @@
 
 ## 4.1.2-2026.11.8
 
-- Enable Error Prone `JavaUtilDate` as an error: use `java.time` instead of `java.util.Date`.
+- Enable Error Prone `JavaUtilDate` as a warning: prefer `java.time` over `java.util.Date`.
 
 ## 4.1.2-2026.11.7
 
