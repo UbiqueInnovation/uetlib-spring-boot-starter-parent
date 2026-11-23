@@ -3,6 +3,11 @@
 ## 4.1.2-2026.11.8
 
 - Enable Error Prone `JavaUtilDate` as a warning: prefer `java.time` over `java.util.Date`.
+- Run Error Prone's default checks instead of a fixed list: default errors fail the build, default warnings such as
+  `JavaUtilDate`, `ReferenceEquality` and `FutureReturnValueIgnored` are reported. Only flags that differ from the
+  defaults remain: `MissingSummary` is off, `OpenEnumStructure`, `OpenEnumNestedTypeImport`,
+  `EqualsIncompatibleType` and `NullAway` are errors, and `RequireExplicitNullMarking` uses
+  `explicit-null-marking-level`.
 
 ## 4.1.2-2026.11.7
 
