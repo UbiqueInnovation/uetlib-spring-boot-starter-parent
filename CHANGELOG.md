@@ -1,6 +1,15 @@
 # CHANGELOG
 
-## 4.1.2-2026.11.8
+## 4.2.0-2026.11.8
+
+- `uetlib-bom` updated to
+  `2026.11.6`: [Changelog/2026.11.6](https://github.com/UbiqueInnovation/uetlib-bom/blob/main/CHANGELOG.md#2026116) [Diff/2026.11.4-2026.11.6](https://github.com/UbiqueInnovation/uetlib-bom/compare/v2026.11.4...v2026.11.6)
+- `uetlib-self-bom` updated to
+  `6.1.0`: [Changelog/6.1.0](https://github.com/UbiqueInnovation/uetlib-self-bom/blob/main/CHANGELOG.md#610) [Diff/6.0.6-6.1.0](https://github.com/UbiqueInnovation/uetlib-self-bom/compare/v6.0.6...v6.1.0)
+- `uetlib-errorprone` updated to
+  `1.0.0`: [Changelog/1.0.0](https://github.com/UbiqueInnovation/uetlib-errorprone/blob/main/CHANGELOG.md#100) [Diff/0.1.1-1.0.0](https://github.com/UbiqueInnovation/uetlib-errorprone/compare/v0.1.1...v1.0.0)
+- Update to Spring Boot 4.2.0 / Spring Cloud 2026.0.0.
+- Updated dependencies and actions.
 
 - Enable Error Prone `JavaUtilDate` as a warning: prefer `java.time` over `java.util.Date`.
 - Run Error Prone's default checks instead of a fixed list: default errors fail the build, default warnings such as
